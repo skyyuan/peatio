@@ -4,12 +4,13 @@ require 'mina/git'
 require 'mina/rbenv'
 require 'mina/slack/tasks'
 
-set :repository, 'https://github.com/peatio/peatio.git'
-set :user, 'deploy'
+set :repository, 'git@github.com:skyyuan/peatio.git'
+set :user, 'root'
 set :deploy_to, '/home/deploy/peatio'
 set :branch, 'master'
-set :domain, 'demo.peatio.com'
-
+set :domain, '140.143.0.55'
+set :term_mode, nil
+set :rvm_path, '/usr/local/rvm/bin/rvm'
 set :shared_paths, [
   'config/database.yml',
   'config/application.yml',
@@ -23,10 +24,6 @@ set :shared_paths, [
   'tmp',
   'log'
 ]
-
-task :environment do
-  invoke :'rbenv:load'
-end
 
 task :setup => :environment do
   queue! %[mkdir -p "#{deploy_to}/shared/log"]

@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.0.12'
 gem 'rails-i18n'
 
-gem 'mysql2'
 gem 'daemons-rails'
 gem 'redis-rails'
 
@@ -85,6 +84,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'byebug'
+  gem 'mysql2'
 end
 
 group :test do
