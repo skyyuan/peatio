@@ -14,5 +14,4 @@ unless environments.empty?
   puts ""
   environments.each do |key| puts "  #{key}" end
   puts "====================================================="
-  raise "config missing"
 end
